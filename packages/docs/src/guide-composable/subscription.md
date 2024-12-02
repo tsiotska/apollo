@@ -82,6 +82,7 @@ We need to either use the `GraphQLWsLink` or the `HttpLink` depending on the ope
 ```js
 import { HttpLink, split } from "@apollo/client/core"
 import { GraphQLWsLink } from "@apollo/client/link/subscriptions"; // <-- This one uses graphql-ws
+import { createClient } from "graphql-ws";
 import { getMainDefinition } from "@apollo/client/utilities"
 
 // Create an http link:
@@ -402,7 +403,7 @@ This is called when a new result is received from the server:
 ```js
 const { onResult } = useSubscription(...)
 
-onResult(result => {
+onResult((result, context) => {
   console.log(result.data)
 })
 ```
@@ -416,8 +417,45 @@ import { logErrorMessages } from '@vue/apollo-util'
 
 const { onError } = useSubscription(...)
 
-onError(error => {
+onError((error, context) => {
   logErrorMessages(error)
+})
+```
+
+### Update the cache
+
+Using `onResult`, you can update the Apollo cache with the new data:
+
+```js
+const { onResult } = useSubscription(...)
+
+onResult((result, { client }) => {
+  const query = {
+    query: gql`query getMessages ($channelId: ID!) {
+      messages(channelId: $channelId) {
+        id
+        text
+      }
+    }`,
+    variables: {
+      channelId: '123',
+    },
+  }
+
+  // Read the query
+  let data = client.readQuery(query)
+
+  // Update cached data
+  data = {
+    ...data,
+    messages: [...data.messages, result.data.messageAdded],
+  }
+
+  // Write back the new result for the query
+  client.writeQuery({
+    ...query,
+    data,
+  })
 })
 ```
 
@@ -596,6 +634,7 @@ const wsLink = new WebSocketLink({
     connectionParams: {
         authToken: user.authToken,
     },
+  }
 })
 ```
 

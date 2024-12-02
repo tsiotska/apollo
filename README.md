@@ -1,20 +1,25 @@
+<p align="center">
+  <img src="./packages/docs/src/public/hero.svg" width="256">
+</p>
+
 # Apollo and GraphQL for Vue.js
 
 [![npm](https://img.shields.io/npm/v/@vue/apollo-composable.svg) ![npm](https://img.shields.io/npm/dm/@vue/apollo-composable.svg)](https://www.npmjs.com/package/@vue/apollo-composable)
 [![apollo3](https://img.shields.io/badge/apollo-3.x-blue.svg)](https://www.apollographql.com/)
 [![vue3](https://img.shields.io/badge/vue-3-brightgreen.svg)](https://vuejs.org/)
-[![CircleCI branch](https://img.shields.io/circleci/build/github/vuejs/vue-apollo/v4.svg)](https://circleci.com/gh/vuejs/vue-apollo/tree/v4)
-
-<p align="center">
-  <img src="./packages/docs/src/public/hero.svg" width="512">
-</p>
-
+![GitHub branch check runs](https://img.shields.io/github/check-runs/vuejs/apollo/v4)
 
 :book: Documentation [**for Vue 3**](http://v4.apollo.vuejs.org) | [for Vue 2](https://apollo.vuejs.org/)
 
 [:pen: Contributing guide](./CONTRIBUTING.md)
 
 [:heart: Sponsor me!](https://github.com/sponsors/Akryum)
+
+## Continuous Releases
+
+You can install builds from any commit on the main branch from [here](https://nightly.akryum.dev/vuejs/vue-apollo) or from any Pull Request.
+
+## Monorepo
 
 In this monorepository:
 

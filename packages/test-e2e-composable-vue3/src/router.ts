@@ -72,5 +72,30 @@ export const router = createRouter({
         layout: 'blank',
       },
     },
+    {
+      path: '/pinia3',
+      component: () => import('./components/ChannelListPiniaContainer.vue'),
+      meta: {
+        layout: 'blank',
+      },
+    },
+    {
+      path: '/no-setup-scope-query',
+      component: () => import('./components/NoSetupScopeQuery.vue'),
+      meta: {
+        layout: 'blank',
+      },
+    },
+    {
+      path: '/subscriptions',
+      component: () => import('./components/Subscriptions.vue'),
+      meta: {
+        layout: 'blank',
+      },
+    },
+    {
+      path: '/update-query',
+      component: () => import('./components/UpdateQuery.vue'),
+    },
   ],
 })

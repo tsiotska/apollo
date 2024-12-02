@@ -1,26 +1,19 @@
-name: Main continuous tests
-
+name: Publish Nightlies
 on:
+  pull_request:
   push:
     branches:
-      - main
-      - v4
-      - feat/*
-      - fix/*
-  pull_request:
-  workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+      - '**'
+    tags:
+      - '!**'
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
-    name: Build and test
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Install node
         uses: actions/setup-node@v4
@@ -48,14 +41,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Lint
-        run: pnpm run lint
-
       - name: Build
-        run: pnpm run build
+        run: pnpm build
 
-      - name: Types
-        run: pnpm run test:types
-
-      - name: Unit tests
-        run: pnpm run test:unit
+      - run: pnpx pkg-pr-new publish './packages/*'

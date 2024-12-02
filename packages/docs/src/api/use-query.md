@@ -28,8 +28,6 @@
     - `network-only`: return result from network, fail if network call doesn't succeed, save to cache.
     - `no-cache`: return result from network, fail if network call doesn't succeed, don't save to cache.
 
-  - `fetchResults`: Whether or not to fetch results.
-
   - `metadata`: Arbitrary metadata stored in the store with this query. Designed for debugging, developer tools, etc.
 
   - `notifyOnNetworkStatusChange`: Whether or not updates to the network status should trigger next on the observer of this query.
@@ -60,7 +58,7 @@
 
 - `subscribeToMore(options)`: Add a subscription to the query, useful to add new data received from the server in real-time. See [Subscription](../guide-composable/subscription#subscribetomore).
 
-- `onResult(handler)`: Event hook called when a new result is available.
+- `onResult(handler)`: Event hook called when a new result is available. Handler is called with: `result` (query result) and `context` which is an object with `client` (ApolloClient instance).
 
-- `onError(handler)`: Event hook called when an error occurs.
+- `onError(handler)`: Event hook called when an error occurs. Handler is called with: `error` and `context` which is an object with `client` (ApolloClient instance).
 

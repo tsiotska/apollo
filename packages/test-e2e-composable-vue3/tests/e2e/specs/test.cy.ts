@@ -74,16 +74,6 @@ describe('Vue 3 + Apollo Composable', () => {
     cy.get('.message').should('have.lengthOf', 0)
   })
 
-  it('supports queries outside of setup', () => {
-    cy.visit('/no-setup-query')
-    cy.contains('.no-setup-query', 'Hello world!')
-  })
-
-  it('supports queries outside of setup with multiple clients', () => {
-    cy.visit('/no-setup-query-multi-client')
-    cy.contains('.no-setup-query', 'Hello world!')
-  })
-
   it('enabled', () => {
     cy.visit('/disabled')
     cy.get('[data-test-id="data"]').should('not.exist')

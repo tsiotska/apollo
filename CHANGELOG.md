@@ -1,5 +1,194 @@
 # Changelog
 
+## v4.2.1
+
+
+### 🩹 Fixes
+
+  - Improved pinia support (#1571)
+
+### 📖 Documentation
+
+  - Update broken circleci badge (9622392)
+  - Readme smaller logo (ff836ea)
+  - Use nightly.akryum.dev (7f3cf7d)
+
+### 🏡 Chore
+
+  - Specify pnpm version in package.json (732e66e)
+
+### ❤️  Contributors
+
+- Nick Messing ([@nickmessing](http://github.com/nickmessing))
+- Guillaume Chau ([@Akryum](http://github.com/Akryum))
+
+## v4.2.0
+
+
+### 🚀 Enhancements
+
+  - Add updateQuery to useQuery (#1552)
+
+### 🩹 Fixes
+
+  - UseMutations onDone Event hook gets triggered too early (#1559)
+  - (@vue/apollo-option) memory leak in wrapped ssrRender (#1553)
+  - Reuse previous result, fix #1483 (#1569, #1483)
+  - ResolveClient throwing too soon, fix #1557 (#1570, #1557)
+
+### 📖 Documentation
+
+  - Add github link to documentation (#1549)
+  - Note about continuous releases (51e09e7)
+
+### 🏡 Chore
+
+  - Switch some tests to script setup (c8e5106)
+
+### 🤖 CI
+
+  - Nightly releases (319f6ec)
+
+### ❤️  Contributors
+
+- Guillaume Chau ([@Akryum](http://github.com/Akryum))
+- Matt Garrett <mattga@gmail.com>
+- Mobsean ([@mobsean](http://github.com/mobsean))
+- Leonardo Santos ([@syllomex](http://github.com/syllomex))
+- Alex Liu ([@Mini-ghost](http://github.com/Mini-ghost))
+
+## v4.1.0
+
+
+### 🩹 Fixes
+
+  - Change teardown to use onScopeDispose (#1545)
+
+### 📖 Documentation
+
+  - **useQuery:** Document refetch with new variables (#1564)
+
+### 🏡 Chore
+
+  - Updqte pnpm to v9 (827ea6e)
+
+### ✅ Tests
+
+  - UseSubscription (0f5ae61)
+  - Fix subscription test (#1547)
+
+### 🤖 CI
+
+  - Update versions (fe66840)
+
+### ❤️  Contributors
+
+- Guillaume Chau ([@Akryum](http://github.com/Akryum))
+- Nick Messing ([@nickmessing](http://github.com/nickmessing))
+
+## v4.0.2
+
+
+### 🩹 Fixes
+
+  - Use shallowRef on result & error (08f0fcd)
+
+### 📖 Documentation
+
+  - Remove mentions of fetchResults, fix #1060 (#1060)
+
+### ❤️  Contributors
+
+- Guillaume Chau ([@Akryum](http://github.com/Akryum))
+
+## v4.0.1
+
+
+### 🩹 Fixes
+
+  - Use hasInjectionContext in useApolloClient before calling inject (#1529)
+  - **useLazyQuery:** Load() on server, fix #1495 (#1495)
+
+### ✅ Tests
+
+  - Split into outsideComponent.cy.ts (48d0ac2)
+  - Build test app in test command (500d6e4)
+
+### 🤖 CI
+
+  - Use GITHUB_OUTPUT envvar instead of set-output command (#1530)
+
+### ❤️  Contributors
+
+- Guillaume Chau ([@Akryum](http://github.com/Akryum))
+- Arun Sathiya <arun@arun.blog>
+- Dawid Kopys <dewke17@gmail.com>
+
+## v4.0.0
+
+
+### 🚀 Enhancements
+
+  - **useLazyQuery:** Add interface for lazy query return (#1523)
+
+### 🩹 Fixes
+
+  - Improve esm support, fix #1524 (#1524)
+  - Import serializeJs using default import instead of a namespace import (#1485)
+  - **options:** Use exponential backoff on subscribe error retry (b17817e)
+  - **ApolloMutation:** Return result in `mutate` (ddf9aa0)
+  - Prefetch type (f8568e8)
+
+### 📖 Documentation
+
+  - Update vitepress + enable detailed search by default (fb66dce)
+
+### 🏡 Chore
+
+  - Update sheep (9be63fa)
+
+### ✅ Tests
+
+  - Fragment (062f72a)
+
+### 🤖 CI
+
+  - Update node and pnpm (ca3f2f4)
+
+### ❤️  Contributors
+
+- Guillaume Chau ([@Akryum](http://github.com/Akryum))
+- Dawid Kopys <dewke17@gmail.com>
+- Yury Savin <yury@savin.dev>
+
+## v4.0.0-beta.12
+
+
+### 🚀 Enhancements
+
+  - New context params in event hook handlers (0be5d9b)
+
+### 🩹 Fixes
+
+  - Use shallowRef for apollo query (76f19f6)
+
+### 📖 Documentation
+
+  - Missing curly brace (#1512)
+  - Added missing createClient import in example when creating Graph… (#1513)
+  - Import createApolloProvider is missing (#1515)
+
+### 🏡 Chore
+
+  - Moved resolutions to the root of the workspace (#1508)
+
+### ❤️  Contributors
+
+- Guillaume Chau ([@Akryum](http://github.com/Akryum))
+- Hassan <hassanfayyaz19@gmail.com>
+- Mekraldi 
+- Vitaliy
+
 ## v4.0.0-beta.11
 
 
